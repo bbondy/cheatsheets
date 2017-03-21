@@ -112,6 +112,12 @@ TUI mode via command line:
 Enter / exit TUI mode:  
 `Ctrl+X+A`
 
+Startup file:  
+`~/.gdbinit` (for general purpose things)  
+`$PWD/.gdbinit` (for per project config)  
+`~/.gdbinit 
+`gdb -command=alt-gdb-init-file a.out` (Start gdb for program a.out with gdb init file gdb-init-file)
+
 Quit GDB:  
 `quit`  
 `q`
