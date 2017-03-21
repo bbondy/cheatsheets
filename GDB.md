@@ -3,12 +3,13 @@
 ## Execution flow:
 
 Start the program:  
-`run`
+`run`  
 `run cli args here`
 
 
 Stop the program being debugged:  
-`kill`
+`kill`  
+`k`
 
 Go to the next line of code:  
 `next`  
@@ -16,7 +17,8 @@ Go to the next line of code:
 
 Step inside the line of code:  
 `step`  
-`s` 
+`s`
+
 Resume execution:  
 `continue`  
 `c`
@@ -93,11 +95,11 @@ Go down the callstack to the next child frame:
 
 Last command:  
 `Ctrl+P`  
-Up arrow if not in tui mode
+`<Up arrow>` if not in tui mode
 
 Next command:  
 `Ctrl+N`  
-Down arrow if not in tui mode
+`<Down arrow>` if not in tui mode
 
 Repeat last command:  
 `<enter>`
