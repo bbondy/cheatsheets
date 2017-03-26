@@ -13,50 +13,67 @@ Stop the program being debugged:
 
 Go to the next line of code:  
 `next`  
+`next <offset>` (next that many times)  
 `n`
 
-Step inside the line of code:  
+Step inside the function, or next line of code:  
 `step`  
+`step <offset>` (step that many times)  
 `s`
 
 Resume execution:  
 `continue`  
+`continue <ignore_count>` (number of breakpoints to ignore in a row)  
 `c`
+
+Step out of current function (specifically out of current stack frame, recursion):  
+`finish`  
+`fin`
+
+Step out of current loop (above current mem address):  
+`until`  
+`u`
+
+Execute until something is hit:  
+`until <line_num>`  
+`until <relative_file_path>:<line_num>`  
+`until <some_func_name>`  
+`until <relative_file_path>:<some_func_name>`
 
 ## Breakpoints:
 
-Set a breakpoint on line 16:  
-`break 16` (for line 16)  
-`b 16`
+Set a breakpoint:  
+`break <line_num>`  
+`break <relative_file_path>:<line_num>`  
+`break <some_func_name>`  
+`break <relative_file_path>:<some_func_name>`  
+`b <line_num>`
 
-Set a breakpoint at the start of a function:  
-`break some_func`  
-`b some_func`
+Clear a breakpoint:  
+`clear <line_num>`  
+`clear <relative_file_path>:<line_num>`  
+`clear <some_func_name>`  
+`clear <relative_file_path>:<some_func_name>`  
+`clear` (currently stopped at location's breakpoint)  
+`cl <line_num>`
+
+Set a breakpoint by regex:  
+`rbreak <regex>`  
+`rb <regex>`
 
 Set a conditional breakpoint:  
-`break 16 if z > 10`
+`break <line_num> if z > 10`  
+`break <relative_file_path>:<some_func_name> if z > 10`  
+`break <relative_file_path>:<some_func_name> if strlen(str) === 0 && z > 0`
+
+Set a temporary (one time) breakpoint:  
+`tbreak <line_num>`  
+`tb <line_num>`
+`enable once <breakpoint_num>` (disables instead of deleting breakpoint)
 
 Add a condition to an existing breakpoint:  
-`condition 1 my_var == 7` (where 1 is the breakpoint number)  
-`cond 1 my_var == 7`
-
-Enable a breakpoint:  
-`enable 1`
-
-Disable a breakpoint:  
-`disable 1`
-
-Set a temporary (one time) breakpoint on line 16:  
-`tbreak 16`  
-`tb 16`
-
-Clear a breakpoint on line 16:  
-`clear 16`  
-`cl 16`
-
-Get a list of breakpoints:  
-`info break`  
-`i b`
+`condition <breakpoint_num> my_var == 7` (where 1 is the breakpoint number)  
+`cond <breakpoint_num> my_var == 7`
 
 Set a watchpoint on a variable:  
 `watch z`  
@@ -65,9 +82,30 @@ Set a watchpoint on a variable:
 Set a conditional watchpoint:  
 `watch (z > 10)`
 
+Get a list of breakpoints, watchpoints, and catchpoints:  
+`info break`  
+`i b`
+
 Get a list of watchpoints:  
 `info watch`  
 `i w`
+
+Disable a breakpoint:  
+`disable <breakpoint_num>`
+`disable <breakpoint_num_list>` (space separated)  
+`disable` (all breakpoints)
+
+Enable a breakpoint:  
+`enable <breakpoint_num>`
+`enable <breakpoint_num_list>` (space separated)  
+`enable` (all breakpoints)
+
+Delete a breakpoint, watchpoint, or catchpoint:  
+`delete <breakpoint_num>`  
+`delete <breakpoint_num_list>` (space separated)  
+`delete` (all breakpoints)  
+`d <breakpoint_num>`
+
 
 ## Inspecting
 
@@ -127,3 +165,8 @@ Quit GDB:
 Change region of code used for displaying:  
 `list sourcefile.cc:1`  
 `l sourcefile.cc:1`
+
+
+## Disassembly:
+
+`g++ -S <source_file>`  (produce assembly language file)
