@@ -22,13 +22,16 @@ Getting a list of sessions:
 Dettaching from a session:  
 `Ctrl-b d`
 
-##Splitting
+##Panes
 
 Split vertically:  
 `Ctrl-b %`
 
 Split horizontally:  
 `Ctrl-b "`
+
+Killing the current pane:  
+`Ctrl-b x`
 
 ##Reloading
 
