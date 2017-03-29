@@ -106,6 +106,17 @@ Delete a breakpoint, watchpoint, or catchpoint:
 `delete` (all breakpoints)  
 `d <breakpoint_num>`
 
+Breakpoint command lists:
+```
+commands <breakpoint_num>
+# silent optionally supresses output from the debugger.
+silent
+printf "test %d", i
+# continue optionally continues the program again after the commands are done.
+continue
+end
+```
+
 
 ## Inspecting
 
@@ -128,6 +139,14 @@ Go up to the parent frame in the callstack:
 Go down the callstack to the next child frame:  
 `down`
 
+## Custom commands
+
+Defining custom commands:
+```
+define <custom_command_name>
+...
+end
+```
 
 ## Command history
 
