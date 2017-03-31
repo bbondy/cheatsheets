@@ -22,7 +22,7 @@ Getting a list of sessions:
 Dettaching from a session:  
 `Ctrl-b d`
 
-##Panes
+##Pane management
 
 Split vertically:  
 `Ctrl-b %`
@@ -33,6 +33,11 @@ Split horizontally:
 Killing the current pane:  
 `Ctrl-b x`
 
+##Pane navigation
+
+Moving around to different panes:  
+`Ctrl-b <arrow-key>`
+
 ##Reloading
 
 Reloading config:  
@@ -41,5 +46,5 @@ Reloading config:
 ##Mouse
 
 Mouse mode on/off:  
-`Ctrl-b m`
+`Ctrl-b m`  
 `Ctrl-b M`
