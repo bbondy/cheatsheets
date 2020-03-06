@@ -40,9 +40,9 @@ go run main.go
 ### Variable declaration:
 
 ```
-var x string = “"
+var x string = ""
 var x float64 = 3.1
-x := “hi”
+x := "hi"
 ```
 
 ### Arrays:
@@ -118,10 +118,10 @@ type Shape interface {
 x := make(map[string]int). // Map of a strings to ints
 len(x) // Length of the map
 delete(x)
-elem, wasSuccess = x[“hi”]
+elem, wasSuccess = x["hi"]
 elements := map[string]string{
      "H": "Hydrogen",
-     "He": "Helium”,
+     "He": "Helium",
 }
 ```
 
@@ -134,7 +134,7 @@ if i % 2 == 0 {
 switch i {
 case 0: fmt.Println("Zero")
 case 1: fmt.Println("One")
-case 2: fmt.Println("Two”)
+case 2: fmt.Println("Two")
 }
 ```
 
@@ -178,7 +178,7 @@ defer f.Close()
 // panic / recover
 divide := func(x, y) int {
   if y == 0 {
-    panic(“can’t divide by 0”)
+    panic("can’t divide by 0")
   }
   return x/ y
 }
@@ -202,7 +202,7 @@ go myFunc()
 // Create a synchronous channel (reads / writes blocks)
 var c chan string = make(chan string)
 // Send data to a channel
-c <- “hello”
+c <- "hello"
 // Get data from a channel
 x := <- c
 // Restrict to only send
@@ -223,7 +223,7 @@ case msg1 := <- c1:
 case msg2 := <- c2:
      fmt.Println("Message 2", msg2)
 case <- time.After(time.Second):
-     fmt.Println("timeout”)
+     fmt.Println("timeout")
 // Select can also have a default: if nothing is ready
 }
 
@@ -236,19 +236,19 @@ case <- time.After(time.Second):
 
 ```
 import (
-  “bytes”
-  “container"
-  "hash/crc32”
-  “fmt”
-  “time”
-  “io”
-  “os”
-  “sort"
-  “Strings"
-  “math/rand”
+  "bytes"
+  "container"
+  "hash/crc32"
+  "fmt"
+  "time"
+  "io"
+  "os"
+  "sort"
+  "Strings"
+  "math/rand"
 )
 
-import m “projects/myProject/math”
+import m "projects/myProject/math"
 ```
 
 lowercase function names are not visible to the outside world. Uppercase are.
@@ -260,3 +260,4 @@ Name test: `math\_test.go`
 
 To test function: `Average`  
 Name function: `TestAverage`
+
