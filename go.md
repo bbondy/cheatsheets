@@ -62,7 +62,7 @@ x := arr[0:5]
 x[:] // Slice of the whole array
 slice2 := append(slice1, 4, 5)
 copy(slice2, slice1)
-x… (Slice which can be passed to variadic functions)
+x... (Slice which can be passed to variadic functions)
 ```
 
 ### Pointers:
